@@ -42,6 +42,11 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    public List<Book> getAllBookByCat(String cat) {
+        return bookRepository.findByCategories(cat);
+    }
+
+    @Override
     public void deleteBook(String id) {
 
     }

@@ -30,4 +30,10 @@ public class BookController {
     public ResponseEntity<Book> createBook(@RequestBody Book book) {
         return ResponseEntity.ok().body(bookService.createBook(book));
     }
+
+    @GetMapping("/category/{category}")
+    public ResponseEntity<List<Book>> getBooksByCat(@PathVariable String category)
+    {
+        return  ResponseEntity.ok().body(bookService.getAllBookByCat(category));
+    }
 }
