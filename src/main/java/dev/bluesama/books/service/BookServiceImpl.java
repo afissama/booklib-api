@@ -2,7 +2,6 @@ package dev.bluesama.books.service;
 
 import dev.bluesama.books.model.Book;
 import dev.bluesama.books.repository.BookRepository;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,7 +32,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book getBookById(ObjectId bookId) {
+    public Book getBookById(String bookId) {
         Optional< Book > bookDb = bookRepository.findById(bookId);
         if (bookDb.isPresent()) {
             return bookDb.get();
@@ -43,7 +42,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void deleteBook(ObjectId id) {
+    public void deleteBook(String id) {
 
     }
 }

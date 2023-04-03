@@ -12,7 +12,7 @@ public interface BookService {
 
     List< Book > getAllBook();
 
-    Book getBookById(ObjectId bookId);
+    Book getBookById(String bookId);
 
-    void deleteBook(ObjectId id);
+    void deleteBook(String id);
 }

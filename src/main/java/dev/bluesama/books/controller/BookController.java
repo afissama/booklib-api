@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = {"*"})
+@CrossOrigin
 public class BookController {
     @Autowired
     private BookService bookService;
@@ -22,7 +22,7 @@ public class BookController {
     }
 
     @GetMapping("/book/{id}")
-    public ResponseEntity<Book> getBookById(@PathVariable ObjectId id) {
+    public ResponseEntity<Book> getBookById(@PathVariable String id) {
         return ResponseEntity.ok().body(bookService.getBookById(id));
     }
 

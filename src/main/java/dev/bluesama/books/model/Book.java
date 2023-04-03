@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Book {
     @Id
-    private ObjectId id;
+    private String id;
     private String title;
     private String author;
     private String pdfLink;
@@ -21,11 +21,11 @@ public class Book {
     private String cover;
     private String categories;
 
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(String id) {
         this.id = id;
     }
 
